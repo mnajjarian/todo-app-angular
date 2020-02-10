@@ -1,61 +1,8 @@
 /*Google fonts*/
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body {
-  padding: 0;
-  margin: 0;
-}
-form {
-  max-width: 25em;
-  margin: 4em auto;
-  position: relative;
-  background: #f4f4f4;
-  padding: 2em 3em;
-  overflow: scroll;
-  h1 {
-    font-family: "Raleway";
-    color: #f97300;
-  }
-  input[type="text"]::placeholder {
-    font-family: "Raleway";
-    color: #666;
-  }
-  .data {
-    margin-top: 1em;
-  }
-  .data li {
-    background: #fff;
-    border-left: 4px solid #f97300;
-    padding: 1em;
-    margin: 1em auto;
-    color: #666;
-    font-family: "Raleway";
-  }
-  .data li i {
-    float: right;
-    color: #888;
-    cursor: pointer;
-  }
-  .input-group-text {
-    background: #f97300;
-    border-radius: 50%;
-    width: 5em;
-    height: 5em;
-    padding: 1em 23px;
-    color: #fff;
-    position: absolute;
-    right: 13px;
-    top: 68px;
-    cursor: pointer;
-  }
-  .input-group-text i {
-    font-size: 2em;
-  }
-  .form-control {
-    height: 3em;
-    font-family: "Raleway";
-  }
-  .form-control:focus {
-    box-shadow: 0;
-  }
+
+button:nth-last-child(1) {
+    margin-left: auto;
 }

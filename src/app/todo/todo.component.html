@@ -1,0 +1,43 @@
+<div class="container">
+  <h1 class="enter-todo" *ngIf="!(authService.user | async)">
+    Please <a href="/login">Login</a> to continue
+  </h1>
+  <form *ngIf="authService.user | async" class="myForm">
+    <div class="form-group">
+      <h1 class="text-center text-primary">Todo App</h1>
+      <div class="input-group-prepend">
+        <input
+          type="text"
+          #todo
+          class="form-control"
+          placeholder="Add Todo"
+          name="todo"
+          ngModel
+        />
+        <span class="input-group-text" (click)="addTodo(todo?.value)"
+          ><i class="material-icons">archive</i></span
+        >
+      </div>
+    </div>
+    <div class="data">
+      <ul class="list-instyled">
+        <li
+          [@moveInLeft]
+          *ngFor="let todo of todo$ | async"
+          [class.completed]="todo?.completed"
+        >
+          {{ todo?.value }}
+          <mat-checkbox
+            color="accent"
+            name="todo?.completed"
+            [checked]="todo?.completed"
+            (change)="updateItem(todo)"
+          
+          ></mat-checkbox>
+          <!-- {{ todo.createdAt.toDate()}} -->
+          <i class="material-icons" (click)="deleteItem(todo)">delete</i>
+        </li>
+      </ul>
+    </div>
+  </form>
+</div>
