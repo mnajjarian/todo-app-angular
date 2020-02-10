@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyDQm2XI-07zzSci5zrbIBH_K2b_bfyVJzA',
+    apiKey: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
     authDomain: 'angular-wiki-4bbc4.firebaseapp.com',
     databaseURL: 'https://angular-wiki-4bbc4.firebaseio.com',
     projectId: 'angular-wiki-4bbc4',
