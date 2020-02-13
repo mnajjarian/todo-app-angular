@@ -8,6 +8,9 @@ export class AuthService {
   user: Observable<firebase.User>;
   private loggedIn = new BehaviorSubject<boolean>(false);
 
+  public showError: boolean = false
+  public errMessage: string;
+
   get isLoggedIn() {
     return this.loggedIn.asObservable();
   }
@@ -22,7 +25,12 @@ export class AuthService {
         this.router.navigate(["/"]);
       })
       .catch(err => {
-        console.log(`Somthing went wrong: ${err.message}`);
+        this.showError = true;
+        this.errMessage = err.message;
+        setTimeout(() => {
+          this.showError = false;
+          this.errMessage = '';
+        },5000)
       });
   }
   login(email: string, password: string) {
@@ -32,7 +40,12 @@ export class AuthService {
         this.router.navigate(["/"]);
       })
       .catch(err => {
-        console.log(`Somthing went wrong: ${err.message}`);
+        this.showError = true
+        this.errMessage = err.message
+        setTimeout(() => {
+          this.showError = false;
+          this.errMessage = '';
+        },5000)
       });
   }
 

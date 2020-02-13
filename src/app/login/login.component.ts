@@ -9,17 +9,30 @@ import { AuthService } from "../services/auth.service";
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
-    username: new FormControl("", Validators.compose([Validators.required])),
-    password: new FormControl("", Validators.compose([Validators.required]))
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [
+      Validators.required,
+      Validators.pattern(
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/
+      )
+    ])
   });
 
-  constructor(public authService: AuthService) {}
-
+  constructor(private authService: AuthService) {}
+  
   ngOnInit() {}
+
+  get email() {
+    return this.loginForm.get("email");
+  }
+
+  get password() {
+    return this.loginForm.get("password");
+  }
 
   login(formData: FormGroup) {
     if (formData.valid) {
-      this.authService.login(formData.value.username, formData.value.password);
+      this.authService.login(formData.value.email, formData.value.password);
     }
   }
 
