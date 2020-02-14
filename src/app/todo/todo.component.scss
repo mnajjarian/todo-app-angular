@@ -24,11 +24,13 @@ a {
 }
 form {
   max-width: 45em;
+  max-height: 75vh;
   margin: 4em auto;
   position: relative;
   background: #f4f4f4;
   padding: 2em 3em;
-  overflow: scroll;
+  overflow: hidden;
+
   h1 {
     font-family: "Raleway";
     color: #f97300;
@@ -38,14 +40,18 @@ form {
     color: #666;
   }
   .data {
+    overflow: scroll;
     margin-top: 1em;
     ul {
+      max-height: 100vh;
+      overflow: scroll;
       margin: 0;
     }
     .completed {
       border-left: 4px solid green;
     }
-    .mat-checkbox, .mat-accent {
+    .mat-checkbox,
+    .mat-accent {
       border-color: black;
     }
     li {

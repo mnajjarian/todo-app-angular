@@ -22,7 +22,7 @@
     <div class="data">
       <ul class="list-instyled">
         <li
-          [@moveInLeft]
+
           *ngFor="let todo of todo$ | async"
           [class.completed]="todo?.completed"
         >
