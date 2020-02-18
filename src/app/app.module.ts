@@ -13,6 +13,7 @@ import { TodoComponent } from './todo/todo.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './services/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { BrowserModule } from '@angular/platform-browser';
     
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
