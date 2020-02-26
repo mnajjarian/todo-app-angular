@@ -3,7 +3,6 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.25.
 
 
-[Demo version](https://angular-wiki-4bbc4.firebaseapp.com/)
 
 ## Development server
 
